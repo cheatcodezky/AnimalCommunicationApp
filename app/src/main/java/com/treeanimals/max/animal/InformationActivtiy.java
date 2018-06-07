@@ -59,6 +59,7 @@ public class InformationActivtiy extends AppCompatActivity {
         headPicture.setOnClickListener(clickListener);
         mainLayout = (LinearLayout)findViewById(R.id.main_layout);
         headPortrait = (CircleImageView)findViewById(R.id.headPortrait);
+
     }
     //展示头像图片选择项
     private void showPopupWindow(){

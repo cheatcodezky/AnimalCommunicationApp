@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#000">
-
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/findButton"
+                android:layout_marginLeft="20dp"
+                android:textSize="30dp"
+                android:textColor="@color/babyGreen"
+                android:gravity="center"
+                android:text="寻找"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:id="@+id/findButtonTag"
+                android:layout_marginLeft="40dp"
+                android:layout_width="15dp"
+                android:layout_height="3dp"
+                android:background="@color/babyGreen"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/releaseButton"
+            android:layout_marginLeft="20dp"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="发布"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            <View
+                android:id="@+id/releaseButtonTag"
+                android:layout_marginLeft="45dp"
+                android:layout_width="15dp"
+                android:layout_height="3dp"
+                android:background="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/gray"></LinearLayout>
 </LinearLayout>

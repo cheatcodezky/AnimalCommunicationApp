@@ -36,7 +36,14 @@ public class MainActivity extends AppCompatActivity {
         homeFragment = new HomeFragment();
         fragmentManager = getSupportFragmentManager();
         bottomNavigation.setTabSelectedListener(new NavigationListener());
-
+        setDefaultFragment();
+    }
+    private void setDefaultFragment(){
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        if( homeFragment == null)
+            homeFragment = new HomeFragment();
+        fragmentTransaction.replace(R.id.contentPage,homeFragment);
+        fragmentTransaction.commit();
     }
     class NavigationListener implements BottomNavigationBar.OnTabSelectedListener{
 
