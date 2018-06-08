@@ -53,5 +53,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/gray"></LinearLayout>
+        android:orientation="vertical"
+        android:background="@color/gray">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/findList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
 </LinearLayout>
