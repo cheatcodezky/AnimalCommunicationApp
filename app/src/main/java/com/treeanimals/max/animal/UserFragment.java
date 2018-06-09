@@ -16,13 +16,17 @@ import android.widget.Toast;
 
 public class UserFragment extends Fragment {
     public static final int INFORMATIONCODE = 1;
+    private View rootView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.user_page,container,false);
-        LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.userInformation);
-        linearLayout.setOnClickListener(new ClickListener());
-        return view;
+        if (rootView == null){
+            rootView = inflater.inflate(R.layout.user_page,container,false);
+            View view = inflater.inflate(R.layout.user_page,container,false);
+            LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.userInformation);
+            linearLayout.setOnClickListener(new ClickListener());
+        }
+        return rootView;
     }
     @Override
     public void onCreate(Bundle savedInstance){

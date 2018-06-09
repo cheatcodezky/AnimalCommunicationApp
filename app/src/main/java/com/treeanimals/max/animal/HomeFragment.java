@@ -25,9 +25,21 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
     private List<PetRelease> petList = new ArrayList<>();
     private List<PetAccept> petAcceptList = new ArrayList<>();
     private ViewPager homeViewPager;
+    private View rootView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance){
-        View view = inflater.inflate(R.layout.home_page,container,false);
+
+        if (rootView == null){
+            rootView = inflater.inflate(R.layout.home_page,container,false);
+            initView(rootView);
+        }
+        ViewGroup viewGroup = (ViewGroup)rootView.getParent();
+        if (viewGroup != null){
+            viewGroup.removeView(rootView);
+        }
+        return rootView;
+    }
+    private void initView(View view){
 
         findButton = (TextView)view.findViewById(R.id.findButton);
         releaseButton = (TextView)view.findViewById(R.id.releaseButton);
@@ -63,8 +75,8 @@ public class HomeFragment extends Fragment implements ViewPager.OnPageChangeList
         acceptRecyclerView.setLayoutManager(acceptLayoutManager);
         PetAcceptAdapter petAcceptAdapter = new PetAcceptAdapter(petAcceptList);
         acceptRecyclerView.setAdapter(petAcceptAdapter);
-        return view;
     }
+
     private void initArrayList(){
         for (int i =0 ; i< 10;i++){
             PetRelease pet = new PetRelease("狗狗","拆家，吃得多，粘人","1个小时前",R.drawable.doog,1000);

@@ -12,9 +12,16 @@ import android.view.ViewGroup;
  */
 
 public class MessageFragment extends Fragment {
+    private View rootView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.message_page,container,false);
-        return view;
+        if (rootView == null){
+            rootView = inflater.inflate(R.layout.message_page,container,false);
+        }
+        ViewGroup viewGroup = (ViewGroup)rootView.getParent();
+        if (viewGroup != null){
+            viewGroup.removeView(rootView);
+        }
+        return rootView;
     }
 }
