@@ -13,9 +13,9 @@ import java.util.List;
  * Created by 95112 on 2018/6/8.
  */
 
-public class PetAdapter extends RecyclerView.Adapter<PetAdapter.ViewHolder> {
+public class PetReleaseAdapter extends RecyclerView.Adapter<PetReleaseAdapter.ViewHolder> {
     private List<PetRelease> petList;
-    public PetAdapter(List<PetRelease> petList){
+    public PetReleaseAdapter(List<PetRelease> petList){
         this.petList = petList;
     }
     static class ViewHolder extends RecyclerView.ViewHolder{
