@@ -11,7 +11,7 @@ import android.util.Log;
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private BottomNavigationBar bottomNavigation;
     private HomeFragment homeFragment;
     private MessageFragment messageFragment;

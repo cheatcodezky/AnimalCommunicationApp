@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +23,7 @@ public class UserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null){
             rootView = inflater.inflate(R.layout.user_page,container,false);
-            View view = inflater.inflate(R.layout.user_page,container,false);
-            LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.userInformation);
+            LinearLayout linearLayout = (LinearLayout)rootView.findViewById(R.id.userInformation);
             linearLayout.setOnClickListener(new ClickListener());
         }
         return rootView;
@@ -34,6 +34,7 @@ public class UserFragment extends Fragment {
 
     }
     class ClickListener implements View.OnClickListener{
+
         @Override
         public void onClick(View v) {
             switch(v.getId()){

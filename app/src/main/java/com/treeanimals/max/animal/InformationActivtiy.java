@@ -41,7 +41,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by 95112 on 2018/6/7.
  */
 
-public class InformationActivtiy extends AppCompatActivity {
+public class InformationActivtiy extends BaseActivity {
     private final ClickListener clickListener = new ClickListener();
     private LinearLayout mainLayout;
     private WindowManager.LayoutParams layoutParams;
