@@ -28,8 +28,10 @@ public class UserMessageAdapter extends RecyclerView.Adapter<UserMessageAdapter.
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         TextView nameView,messageView,timeView;
+        View itemView;
         public ViewHolder(View itemView) {
             super(itemView);
+            this.itemView = itemView;
             imageView = (ImageView)itemView.findViewById(R.id.messageUserPortrait);
             nameView = (TextView)itemView.findViewById(R.id.messageUserName);
             messageView = (TextView)itemView.findViewById(R.id.messageUserNew);
@@ -40,7 +42,7 @@ public class UserMessageAdapter extends RecyclerView.Adapter<UserMessageAdapter.
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.received_message,parent,false);
         final ViewHolder viewHolder = new ViewHolder(view);
-        viewHolder.messageView.setOnClickListener(new View.OnClickListener() {
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int position = viewHolder.getAdapterPosition();
