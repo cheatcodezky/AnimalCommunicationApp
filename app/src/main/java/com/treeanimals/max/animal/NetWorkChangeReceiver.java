@@ -11,6 +11,6 @@ import android.content.Intent;
 public class NetWorkChangeReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        
+
     }
 }
