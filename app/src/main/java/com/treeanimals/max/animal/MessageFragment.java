@@ -1,5 +1,6 @@
 package com.treeanimals.max.animal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,6 +8,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.treeanimals.max.animal.weather.GetCountry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +22,7 @@ import java.util.List;
 public class MessageFragment extends Fragment {
     private View rootView;
     private List<UserMessage> messageList = new ArrayList<>();
-
+    private LinearLayout comment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         if (rootView == null){
@@ -34,6 +38,15 @@ public class MessageFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         UserMessageAdapter userMessageAdapter = new UserMessageAdapter(messageList,getContext());
         recyclerView.setAdapter(userMessageAdapter);
+        comment = (LinearLayout)rootView.findViewById(R.id.comment);
+        comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),VisitActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return rootView;
     }
 
